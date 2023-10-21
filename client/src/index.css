@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-VF.ttf') format('truetype');
+}
+
+:root {
+  --font-primary: 'Lato', sans-serif;
+  --font-heading: 'Raleway', sans-serif;
+  --base-font-size: 16px;
+  --ratio: 1.2;
+  --body-font-size: var(--base-font-size);
+  --h6-font-size: calc(var(--body-font-size) * var(--ratio));
+  --h5-font-size: calc(var(--h6-font-size) * var(--ratio));
+  --h4-font-size: calc(var(--h5-font-size) * var(--ratio));
+  --h3-font-size: calc(var(--h4-font-size) * var(--ratio));
+  --h2-font-size: calc(var(--h3-font-size) * var(--ratio));
+  --h1-font-size: calc(var(--h2-font-size) * var(--ratio));
+}
+
+p {
+  font-family: var(--font-primary);
+  font-size: var(--body-font-size);
+  @apply mb-[1rem];
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-family: var(--font-heading);
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-family: var(--font-heading);
+  font-size: var(--h6-font-size);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --ratio: 1.25;
+  }
+}
