@@ -2,7 +2,15 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navyBlue: '#1A1A2E',
+        charcoal: '#2A2A36',
+        midnightPurple: '#6200EA',
+        copperOrange: '#A65633',
+        slateGray: '#708B9E',
+      },
+    },
   },
   plugins: [],
 };

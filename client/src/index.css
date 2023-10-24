@@ -16,7 +16,7 @@
   --font-primary: 'Lato', sans-serif;
   --font-heading: 'Raleway', sans-serif;
   --base-font-size: 16px;
-  --ratio: 1.2;
+  --ratio: 1.125;
   --body-font-size: var(--base-font-size);
   --h6-font-size: calc(var(--body-font-size) * var(--ratio));
   --h5-font-size: calc(var(--h6-font-size) * var(--ratio));
@@ -24,6 +24,10 @@
   --h3-font-size: calc(var(--h4-font-size) * var(--ratio));
   --h2-font-size: calc(var(--h3-font-size) * var(--ratio));
   --h1-font-size: calc(var(--h2-font-size) * var(--ratio));
+}
+
+body {
+  @apply bg-navyBlue text-white;
 }
 
 p {
@@ -62,8 +66,20 @@ h6 {
   font-size: var(--h6-font-size);
 }
 
+.burger {
+  height: 20px;
+  width: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  span {
+    @apply block h-[3px] w-full bg-copperOrange;
+  }
+}
+
 @media screen and (min-width: 768px) {
   :root {
-    --ratio: 1.25;
+    --ratio: 1.2;
   }
 }
