@@ -1,8 +1,10 @@
 import { IGenerics } from '../../../utils/interfaces';
 
-const MainHeader = ({ children }: IGenerics) => {
+const MainHeader = ({ children, className }: IGenerics) => {
   return (
-    <header className='bg-slateGray/20 flex flex-row justify-between p-4 items-center'>
+    <header
+      className={`bg-charcoal flex flex-row justify-between p-4 items-center ${className}`}
+    >
       {children}
     </header>
   );

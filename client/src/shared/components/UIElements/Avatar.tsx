@@ -2,9 +2,9 @@ import { IAvatar } from '../../../utils/interfaces';
 
 const Avatar = ({ image, name }: IAvatar) => {
   return (
-    <figure className='h-[120px] w-[120px] p-1 rounded-full border-copperOrange border-2 overflow-hidden'>
+    <figure>
       <img
-        className='w-full h-full object-cover rounded-full'
+        className='w-20 h-20 md:w-28 md:h-28 lg:max-w-xs lg:max-h-lg object-cover rounded-full p-1 border-copperOrange border-2 overflow-hidden'
         src={image}
         alt={name}
       />

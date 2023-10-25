@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Lato-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('/fonts/Raleway-VF.ttf') format('truetype');
+  src: url('./assets/fonts/Raleway-Medium.ttf') format('truetype');
 }
 
 :root {
@@ -28,6 +28,10 @@
 
 body {
   @apply bg-navyBlue text-white;
+}
+
+nav a {
+  font-family: var(--font-primary);
 }
 
 p {
@@ -66,12 +70,17 @@ h6 {
   font-size: var(--h6-font-size);
 }
 
+a.active {
+  @apply text-copperOrange font-bold;
+}
+
 .burger {
   height: 20px;
   width: 40px;
-  display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+
+  @apply flex sm:hidden;
 
   span {
     @apply block h-[3px] w-full bg-copperOrange;
