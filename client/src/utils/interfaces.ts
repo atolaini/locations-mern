@@ -31,6 +31,12 @@ export interface IPlaceItem {
   title: string;
   address: string;
   description: string;
+  id: string;
+  creatorId: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
 }
 
 export interface IPlace {
@@ -44,4 +50,32 @@ export interface IPlace {
     lng: number;
   };
   creator: string;
+}
+
+export interface IButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: string;
+  size?: 'small' | 'default' | 'large';
+  inverse?: boolean;
+  danger?: boolean;
+  to?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+export interface IModal extends IModalOverlay {
+  show: boolean;
+  onCancel?: () => void;
+}
+
+export interface IModalOverlay extends IGenerics {
+  className?: string;
+  headerClassName?: string;
+  headerTitle?: string;
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+  contentClassName?: string;
+  footClassName?: string;
+  footerContent?: React.ReactNode;
+  children: React.ReactNode;
 }

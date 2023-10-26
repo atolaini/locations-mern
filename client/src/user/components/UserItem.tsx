@@ -10,7 +10,7 @@ const UserItem = ({ name, image, placeCount, id }: IUserItems) => {
       <Card>
         <Link
           to={`/${id}/places`}
-          className='flex flex-1 flex-row p-4  items-center gap-4'
+          className='flex flex-1 flex-row items-center gap-4'
         >
           <Avatar
             image={image}

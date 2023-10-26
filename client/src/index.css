@@ -87,6 +87,62 @@ a.active {
   }
 }
 
+.button {
+  font-family: var(--font-heading);
+  @apply cursor-pointer no-underline inline-block py-[0.5rem] px-[1.5rem] border-[1px] border-copperOrange rounded bg-copperOrange text-white cursor-pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover,
+.button:active {
+  @apply bg-forestGreen text-white border-forestGreen;
+}
+
+.button--inverse {
+  @apply bg-transparent text-white;
+}
+
+.button--inverse:hover,
+.button--inverse:active {
+  @apply bg-forestGreen text-white border-forestGreen;
+}
+
+.button--danger {
+  @apply bg-burgundy border-burgundy text-white;
+}
+
+.button--danger:hover,
+.button--danger:active {
+  background: #f34343;
+  border-color: #f34343;
+}
+
+.button:disabled,
+.button:hover:disabled,
+.button:active:disabled {
+  background: #ccc;
+  color: #979797;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button--small {
+  font-size: 0.8rem;
+}
+
+.button--big {
+  font-size: 1.5rem;
+}
+
+#modal-hook {
+  position: relative;
+  z-index: 11;
+  padding: 2rem;
+}
+
 @media screen and (min-width: 768px) {
   :root {
     --ratio: 1.2;

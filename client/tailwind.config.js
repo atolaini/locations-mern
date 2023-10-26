@@ -9,6 +9,8 @@ export default {
         midnightPurple: '#6200EA',
         copperOrange: '#A65633',
         slateGray: '#708B9E',
+        forestGreen: '#1B998B',
+        burgundy: '#990000',
       },
     },
   },
