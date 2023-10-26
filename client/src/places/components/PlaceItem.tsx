@@ -16,14 +16,20 @@ const PlaceItem = ({
   coordinates,
 }: IPlaceItem) => {
   const [showMap, setShowMap] = useState(false);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
 
   const showMapHandler = () => setShowMap(true);
   const closeMapeHandler = () => setShowMap(false);
 
+  const showDeletePlaceHandler = () => setShowConfirmDelete(true);
+  const closeDeletePlaceHandler = () => setShowConfirmDelete(false);
+  const confirmDeletHandler = () => {
+    console.log('DELETING...');
+    setShowConfirmDelete(false);
+  };
+
   const long = coordinates?.lng;
   const lat = coordinates?.lat;
-
-  console.log(long, lat);
 
   return (
     <>
@@ -37,6 +43,31 @@ const PlaceItem = ({
           }
           show={showMap}
           onCancel={closeMapeHandler}
+        />
+      )}
+
+      {showConfirmDelete && (
+        <Modal
+          show={showConfirmDelete}
+          onCancel={closeDeletePlaceHandler}
+          headerTitle='Are you sure?'
+          footClassName='flex justify-center gap-4'
+          footerContent={
+            <>
+              <Button
+                inverse
+                onClick={closeDeletePlaceHandler}
+              >
+                Cancel
+              </Button>
+              <Button
+                danger
+                onClick={confirmDeletHandler}
+              >
+                Confirm
+              </Button>
+            </>
+          }
         />
       )}
 
@@ -64,7 +95,12 @@ const PlaceItem = ({
               View on Map
             </Button>
             <Button to={`/places/${id}`}>Edit</Button>
-            <Button danger>Delete</Button>
+            <Button
+              danger
+              onClick={showDeletePlaceHandler}
+            >
+              Delete
+            </Button>
           </div>
         </Card>
       </li>

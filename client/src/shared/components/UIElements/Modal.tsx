@@ -25,9 +25,9 @@ const ModalOverlay = ({
       className='relative z-20'
     >
       <Card
-        className={`${className} w-full max-w-4xl h-auto fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] pointer-events-none`}
+        className={`${className} w-full max-w-4xl h-auto fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]  p-5 shadow-2xl`}
       >
-        <header className={`${headerClassName}`}>
+        <header className={`${headerClassName} flex justify-center mb-5`}>
           <h2>{headerTitle}</h2>
         </header>
         <form onSubmit={onSubmit ? onSubmit : (event) => event.preventDefault}>

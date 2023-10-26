@@ -69,7 +69,7 @@ export interface IModal extends IModalOverlay {
   onCancel?: () => void;
 }
 
-export interface IModalOverlay extends IGenerics {
+export interface IModalOverlay {
   className?: string;
   headerClassName?: string;
   headerTitle?: string;
@@ -77,7 +77,7 @@ export interface IModalOverlay extends IGenerics {
   contentClassName?: string;
   footClassName?: string;
   footerContent?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface InputProps
