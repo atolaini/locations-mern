@@ -6,9 +6,7 @@ interface ICardProps extends IGenerics {
 
 const Card = ({ children, className }: ICardProps) => {
   return (
-    <div
-      className={`bg-midnightPurple/20 rounded-lg hover:bg-slateGray/20 transition-all ease-in-out p-5 ${className}`}
-    >
+    <div className={`bg-midnightPurple/20 rounded-lg ${className}`}>
       {children}
     </div>
   );

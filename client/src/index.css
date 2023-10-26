@@ -30,60 +30,64 @@ body {
   @apply bg-navyBlue text-white;
 }
 
-nav a {
-  font-family: var(--font-primary);
+@layer typography {
+  p {
+    font-family: var(--font-primary);
+    font-size: var(--body-font-size);
+    @apply mb-[1rem];
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-font-size);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-font-size);
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-font-size);
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--h4-font-size);
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    font-size: var(--h5-font-size);
+  }
+
+  h6 {
+    font-family: var(--font-heading);
+    font-size: var(--h6-font-size);
+  }
+
+  a.active {
+    @apply text-copperOrange font-bold;
+  }
 }
 
-p {
-  font-family: var(--font-primary);
-  font-size: var(--body-font-size);
-  @apply mb-[1rem];
-}
+@layer navigation {
+  nav a {
+    font-family: var(--font-primary);
+  }
 
-h1 {
-  font-family: var(--font-heading);
-  font-size: var(--h1-font-size);
-}
+  .burger {
+    height: 20px;
+    width: 40px;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 
-h2 {
-  font-family: var(--font-heading);
-  font-size: var(--h2-font-size);
-}
+    @apply flex sm:hidden;
 
-h3 {
-  font-family: var(--font-heading);
-  font-size: var(--h3-font-size);
-}
-
-h4 {
-  font-family: var(--font-heading);
-  font-size: var(--h4-font-size);
-}
-
-h5 {
-  font-family: var(--font-heading);
-  font-size: var(--h5-font-size);
-}
-
-h6 {
-  font-family: var(--font-heading);
-  font-size: var(--h6-font-size);
-}
-
-a.active {
-  @apply text-copperOrange font-bold;
-}
-
-.burger {
-  height: 20px;
-  width: 40px;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-
-  @apply flex sm:hidden;
-
-  span {
-    @apply block h-[3px] w-full bg-copperOrange;
+    span {
+      @apply block h-[3px] w-full bg-copperOrange;
+    }
   }
 }
 
@@ -137,13 +141,8 @@ a.active {
   font-size: 1.5rem;
 }
 
-#modal-hook {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding: 4rem;
+.input-styles {
+  @apply border-2 border-white bg-transparent rounded-md text-white px-4 py-2  focus:border-copperOrange focus:outline-none;
 }
 
 @media screen and (min-width: 768px) {

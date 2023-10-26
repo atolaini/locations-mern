@@ -7,7 +7,7 @@ import Avatar from '../../shared/components/UIElements/Avatar';
 const UserItem = ({ name, image, placeCount, id }: IUserItems) => {
   return (
     <li className='flex flex-row justify-center'>
-      <Card>
+      <Card className='hover:bg-slateGray/20 transition-all ease-in-out p-5'>
         <Link
           to={`/${id}/places`}
           className='flex flex-1 flex-row items-center gap-4'

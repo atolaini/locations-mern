@@ -17,33 +17,29 @@ const ModalOverlay = ({
   footerContent,
 }: IModalOverlay) => {
   const content = (
-    <AnimatePresence>
-      <motion.div
-        variants={modal}
-        initial='hide'
-        animate='show'
-        exit='hide'
-        className='relative z-20'
+    <motion.div
+      variants={modal}
+      initial='hide'
+      animate='show'
+      exit='hide'
+      className='relative z-20'
+    >
+      <Card
+        className={`${className} w-full max-w-4xl h-auto fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] pointer-events-none`}
       >
-        <div className='flex justify-center items-center'>
-          <Card className={`${className} w-full max-w-4xl h-auto`}>
-            <header className={`${headerClassName}`}>
-              <h2>{headerTitle}</h2>
-            </header>
-            <form
-              onSubmit={onSubmit ? onSubmit : (event) => event.preventDefault}
-            >
-              <div className={`${contentClassName}`}>{children}</div>
-              <footer className={`${footClassName}`}>{footerContent}</footer>
-            </form>
-          </Card>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+        <header className={`${headerClassName}`}>
+          <h2>{headerTitle}</h2>
+        </header>
+        <form onSubmit={onSubmit ? onSubmit : (event) => event.preventDefault}>
+          <div className={`${contentClassName}`}>{children}</div>
+          <footer className={`${footClassName}`}>{footerContent}</footer>
+        </form>
+      </Card>
+    </motion.div>
   );
 
   return createPortal(
-    content,
+    <AnimatePresence>{content}</AnimatePresence>,
     document.getElementById('modal-hook') as HTMLElement
   );
 };
@@ -52,7 +48,6 @@ const Modal = ({ show, onCancel, ...props }: IModal) => {
   return (
     <>
       {show && <BackDrop onClick={onCancel} />}
-
       <ModalOverlay {...props} />
     </>
   );

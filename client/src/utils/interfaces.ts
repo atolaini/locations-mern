@@ -79,3 +79,22 @@ export interface IModalOverlay extends IGenerics {
   footerContent?: React.ReactNode;
   children: React.ReactNode;
 }
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  type?: string;
+  label: string;
+  ref: React.ForwardedRef<HTMLInputElement>;
+  children?: React.ReactNode;
+}
+
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label: string;
+  children?: React.ReactNode;
+}
+
+export interface FormControlProps {
+  children: React.ReactNode;
+  label: string;
+}

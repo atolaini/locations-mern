@@ -47,6 +47,8 @@ const PlaceItem = ({
               className='rounded-md w-full mb-5'
               src={imageURL}
               alt={title}
+              width={640}
+              height={425}
             />
           </figure>
           <div className='mb-10'>

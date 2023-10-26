@@ -19,7 +19,7 @@ export const modal = {
   show: {
     opacity: 1,
     transition: {
-      duration: 0.3,
+      duration: 2,
       ease: 'easeInOut',
       delay: 0.2,
       type: 'spring',
@@ -28,7 +28,7 @@ export const modal = {
   hide: {
     opacity: 0,
     transition: {
-      duration: 0.3,
+      duration: 2,
       ease: 'easeInOut',
     },
   },
@@ -45,7 +45,7 @@ export const backdrop = {
   hide: {
     opacity: 0,
     transition: {
-      duration: 0.3,
+      duration: 2,
       ease: 'easeInOut',
     },
   },

@@ -5,22 +5,19 @@ import { slideIn } from '../../../utils/motion';
 
 const SideDraw = ({ children, isOpen }: ISideDraw) => {
   const content = isOpen && (
-    <AnimatePresence>
-      <motion.aside
-        key='side-nav'
-        variants={slideIn}
-        animate='open'
-        initial='closed'
-        exit='closed'
-        className='fixed top-[62px] bg-midnightPurple/20 backdrop-blur h-full w-10/12 p-5 block sm:hidden'
-      >
-        {children}
-      </motion.aside>
-    </AnimatePresence>
+    <motion.aside
+      variants={slideIn}
+      animate='open'
+      initial='closed'
+      exit='closed'
+      className='fixed top-[62px] bg-slateGray/40 backdrop-blur h-full w-10/12 p-5 block sm:hidden'
+    >
+      {children}
+    </motion.aside>
   );
 
   return ReactDOM.createPortal(
-    content,
+    <AnimatePresence> {content} </AnimatePresence>,
     document.getElementById('drawer-hook')!
   );
 };
