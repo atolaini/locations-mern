@@ -138,9 +138,12 @@ a.active {
 }
 
 #modal-hook {
-  position: relative;
-  z-index: 11;
-  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 4rem;
 }
 
 @media screen and (min-width: 768px) {

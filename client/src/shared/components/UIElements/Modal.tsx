@@ -23,7 +23,7 @@ const ModalOverlay = ({
         initial='hide'
         animate='show'
         exit='hide'
-        className='z-20'
+        className='relative z-20'
       >
         <div className='flex justify-center items-center'>
           <Card className={`${className} w-full max-w-4xl h-auto`}>
