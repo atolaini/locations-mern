@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../utils/context/authContent';
 import { IPlaceItem } from '../../utils/interfaces';
 
 import Card from '../../shared/components/UIElements/Card';
@@ -30,6 +30,8 @@ const PlaceItem = ({
 
   const long = coordinates?.lng;
   const lat = coordinates?.lat;
+
+  const auth = useContext(AuthContext);
 
   return (
     <>
@@ -94,13 +96,15 @@ const PlaceItem = ({
             >
               View on Map
             </Button>
-            <Button to={`/places/${id}`}>Edit</Button>
-            <Button
-              danger
-              onClick={showDeletePlaceHandler}
-            >
-              Delete
-            </Button>
+            {auth.isLoggedIn && <Button to={`/places/${id}`}>Edit</Button>}
+            {auth.isLoggedIn && (
+              <Button
+                danger
+                onClick={showDeletePlaceHandler}
+              >
+                Delete
+              </Button>
+            )}
           </div>
         </Card>
       </li>
