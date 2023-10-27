@@ -11,6 +11,7 @@ const NewPlace = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(placeValidation),
@@ -23,10 +24,11 @@ const NewPlace = () => {
   const onSubmitHandler = (data: z.infer<typeof placeValidation>) => {
     console.log('first');
     console.log(data);
+    reset();
   };
 
   return (
-    <Card className='p-5 max-w-2xl m-auto'>
+    <Card className='form'>
       <form onSubmit={handleSubmit(onSubmitHandler)}>
         <Input
           label={'Title'}

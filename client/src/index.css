@@ -141,6 +141,10 @@ nav a {
   @apply border-2 border-white bg-transparent rounded-md text-white px-4 py-2  focus:border-copperOrange focus:outline-none;
 }
 
+.form {
+  @apply w-full max-w-2xl p-5 m-auto;
+}
+
 @media screen and (min-width: 768px) {
   :root {
     --ratio: 1.2;
