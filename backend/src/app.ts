@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { placesRoutes } from '../routes/places-routes';
+import { usersRoutes } from '../routes/user-routes';
 import HttpError from '../models/http-error';
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/places', placesRoutes);
+app.use('/api/users', usersRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError('Could note find this route.', 404);
