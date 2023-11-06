@@ -1,5 +1,4 @@
 import { check } from 'express-validator';
-import { updatePlace } from '../controllers/placesControllers';
 
 export const createPlaceValidation = [
   check('title').not().isEmpty(),
