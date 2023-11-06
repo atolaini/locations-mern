@@ -1,5 +1,6 @@
 import HttpError from '../models/http-error';
 import { v4 as uuidv4 } from 'uuid';
+import { validationResult } from 'express-validator';
 
 let DUMMY_PLACES = [
   {
@@ -47,6 +48,12 @@ export const getPlacesByUserId = (req, res, next) => {
 };
 
 export const createPlace = (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    next(new HttpError('Invalid inputs passed, please check your data.', 422));
+  }
+
   const { title, description, coordinates, address, creator } = req.body;
 
   const createdPlace = {
@@ -65,6 +72,12 @@ export const createPlace = (req, res, next) => {
 };
 
 export const updatePlace = (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    next(new HttpError('Invalid inputs passed, please check your data.', 422));
+  }
+
   const { title, description } = req.body;
   const placeId = req.params.placeid;
   const updatedPlace = { ...DUMMY_PLACES.find((p) => p.id === placeId) };
